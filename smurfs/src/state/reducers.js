@@ -34,5 +34,3 @@ export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
       return newSmurf;
   }
 }
-
-co;

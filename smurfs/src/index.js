@@ -9,7 +9,9 @@ import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
 
 const masterReducer = combineReducers({
-  count: reducers.countReducer
+  count: reducers.countReducer,
+  village: reducers.villageReducer,
+  newSmurfReducer: reducers.newSmurfReducer,
 });
 
 const store = createStore(masterReducer);
