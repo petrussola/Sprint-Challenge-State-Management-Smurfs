@@ -4,15 +4,18 @@ import React, { useEffect } from 'react';
 import * as actionCreators from '../state/actionCreators';
 import { connect } from 'react-redux';
 
+// COMPONENTS
 
-export function Village({fetchDataApi}) {
+import Inhabitant from './Inhabitant';
+
+export function Village({village, fetchDataApi}) {
     useEffect(() => {
         fetchDataApi();
     }, [])
     return (
-        <div>
-            Village
-        </div>
+        village.map( inhabitant => {
+            return <Inhabitant inhabitant={inhabitant} />
+        })
     )
 }
 
