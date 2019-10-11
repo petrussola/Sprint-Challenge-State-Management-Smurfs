@@ -5,8 +5,9 @@ import App from "./components/App";
 
 // STATE
 import * as reducers from "./state/reducers";
-import { combineReducers, createStore } from "redux";
+import { combineReducers, createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
 const masterReducer = combineReducers({
   count: reducers.countReducer,
@@ -16,7 +17,10 @@ const masterReducer = combineReducers({
 
 const store = createStore(
   masterReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 ReactDOM.render(
