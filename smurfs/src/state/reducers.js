@@ -25,6 +25,12 @@ export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
           ...newSmurf,
           [action.payload.name]: action.payload.value,
       }
+      case types.ON_ADD_VILLAGE:
+        return {
+          name: '',
+          age: '',
+          height: '',
+        }
     default:
       return newSmurf;
   }
