@@ -40,3 +40,13 @@ export const onSubmit = (event, smurf) => dispatch => {
         console.log('error posting to api')
     })
 }
+
+export const onDeleteSmurf = (smurfId) => dispatch => {
+  axios.delete(`${smurfsApi}/${smurfId}`)
+  .then(res => {
+    dispatch(addVillage(res.data));
+  })
+  .catch(error => {
+    console.log('error deleting from api');
+  })
+}
