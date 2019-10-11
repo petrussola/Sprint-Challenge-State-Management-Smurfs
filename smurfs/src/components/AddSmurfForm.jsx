@@ -5,7 +5,7 @@ import React from "react";
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 
-export function AddSmurfForm({ newSmurf, onChange, onSubmit}) {
+export function AddSmurfForm({ newSmurf, typeSmurfForm, addSmurf, editSmurfApi }) {
   return (
     <div>
       <label>
@@ -14,7 +14,7 @@ export function AddSmurfForm({ newSmurf, onChange, onSubmit}) {
           type="text"
           name="name"
           value={newSmurf.name}
-          onChange={onChange}
+          onChange={typeSmurfForm}
         />
       </label>
 
@@ -24,7 +24,7 @@ export function AddSmurfForm({ newSmurf, onChange, onSubmit}) {
           type="text"
           name="age"
           value={newSmurf.age}
-          onChange={onChange}
+          onChange={typeSmurfForm}
         />
       </label>
 
@@ -34,13 +34,12 @@ export function AddSmurfForm({ newSmurf, onChange, onSubmit}) {
           type="text"
           name="height"
           value={newSmurf.height}
-          onChange={onChange}
+          onChange={typeSmurfForm}
         />
       </label>
 
-      <button onClick={event => onSubmit(event, newSmurf)}>
-        Add Smurf to the Village
-      </button>
+      <button onClick={event => addSmurf(event, newSmurf)}>Add Smurf</button>
+      <button onClick={() => editSmurfApi(newSmurf)}>Edit Smurf</button>
     </div>
   );
 }

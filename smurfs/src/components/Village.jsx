@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 import Inhabitant from "./Inhabitant";
 
-export function Village({ village, fetchDataApi, onDeleteSmurf }) {
+export function Village({ village, fetchDataApi, onDeleteSmurf, editSmurf }) {
   useEffect(() => {
     fetchDataApi();
   }, []);
@@ -18,6 +18,7 @@ export function Village({ village, fetchDataApi, onDeleteSmurf }) {
         key={inhabitant.id}
         inhabitant={inhabitant}
         onDeleteSmurf={onDeleteSmurf}
+        editSmurf={editSmurf}
       />
     );
   });
