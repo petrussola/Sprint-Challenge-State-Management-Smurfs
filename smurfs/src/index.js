@@ -11,10 +11,13 @@ import { Provider } from "react-redux";
 const masterReducer = combineReducers({
   count: reducers.countReducer,
   village: reducers.villageReducer,
-  newSmurfReducer: reducers.newSmurfReducer,
+  newSmurfReducer: reducers.newSmurfReducer
 });
 
-const store = createStore(masterReducer);
+const store = createStore(
+  masterReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>
