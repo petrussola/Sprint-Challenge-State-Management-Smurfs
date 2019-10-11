@@ -16,9 +16,13 @@ export function villageReducer(village = initialVillage, action) {
 const initialNewSmurf = {};
 
 export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
+    
   switch (action.type) {
     case types.ON_WRITE_NEW_SMURF:
-      return newSmurf;
+      return {
+          ...newSmurf,
+          [action.payload.name]: action.payload.value,
+      }
     default:
       return newSmurf;
   }

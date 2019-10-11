@@ -1,24 +1,49 @@
 import React from "react";
 
-export default function AddSmurfForm() {
+// STATE
+
+import { connect } from "react-redux";
+import * as actionCreators from "../state/actionCreators";
+
+export function AddSmurfForm({ newSmurf, onChange }) {
   return (
     <div>
       <label>
-          Name: 
-        <input type="text" />
+        Name:
+        <input
+          type="text"
+          name="name"
+          value={newSmurf.name}
+          onChange={onChange}
+        />
       </label>
 
       <label>
-          Age:
-        <input type="text" />
+        Age:
+        <input
+          type="text"
+          name="age"
+          value={newSmurf.age}
+          onChange={onChange}
+        />
       </label>
 
       <label>
-          Height:
-        <input type="text" />
+        Height:
+        <input
+          type="text"
+          name="height"
+          value={newSmurf.height}
+          onChange={onChange}
+        />
       </label>
 
       <button>Add Smurf to the Village</button>
     </div>
   );
 }
+
+export default connect(
+  state => state,
+  actionCreators
+)(AddSmurfForm);

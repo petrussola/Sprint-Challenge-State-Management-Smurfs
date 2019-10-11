@@ -20,3 +20,13 @@ export const fetchDataApi = () => dispatch => {
       console.log("api error");
     });
 };
+
+export const onChange = (event) => {
+    return {
+        type: types.ON_WRITE_NEW_SMURF,
+        payload: { 
+            name: event.target.name,
+            value: event.target.value,
+        },
+    }
+}
