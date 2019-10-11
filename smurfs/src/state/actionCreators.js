@@ -30,3 +30,11 @@ export const onChange = (event) => {
         },
     }
 }
+
+export const onSubmit = (event, newSmurf) => {
+    event.preventDefault();
+    return {
+        type: types.ON_ADD_NEW_SMURF,
+        payload: newSmurf,
+    }
+}
