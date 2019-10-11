@@ -34,7 +34,7 @@ export const onChange = (event) => {
 export const onSubmit = (event, smurf) => dispatch => {
     axios.post(smurfsApi, smurf)
     .then(res => {
-        dispatch(addVillage(res.data))
+        dispatch(addVillage(res.data));
     })
     .catch(error => {
         console.log('error posting to api')

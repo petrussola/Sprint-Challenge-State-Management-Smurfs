@@ -11,7 +11,11 @@ export function villageReducer(village = initialVillage, action) {
   }
 }
 
-const initialNewSmurf = {};
+const initialNewSmurf = {
+  name: '',
+  age: '',
+  height: '',
+};
 
 export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
     
