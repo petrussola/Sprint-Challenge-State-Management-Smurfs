@@ -20,7 +20,6 @@ export const fetchDataApi = () => dispatch => {
   axios
     .get(smurfsApi)
     .then(res => {
-      debugger;
       dispatch(addVillage(res.data));
     })
     .catch(error => {
