@@ -1,0 +1,6 @@
+export const ON_FETCH_DATA_API = 'ON_FETCH_DATA_API';
+export const ON_ADD_VILLAGE = 'ON_ADD_VILLAGE';
+export const ON_WRITE_NEW_SMURF = 'ON_WRITE_NEW_SMURF';
+export const ON_ADD_NEW_SMURF = 'ON_ADD_NEW_SMURF';
+
+export const INCREMENT = 'INCREMENT';
