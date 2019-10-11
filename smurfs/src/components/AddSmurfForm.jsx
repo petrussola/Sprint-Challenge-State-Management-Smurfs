@@ -1,11 +1,18 @@
 import React from "react";
+import SubmitButtonForm from "./SubmitButtonForm";
 
 // STATE
 
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 
-export function AddSmurfForm({ newSmurf, typeSmurfForm, addSmurf, editSmurfApi }) {
+export function AddSmurfForm({
+  newSmurf,
+  typeSmurfForm,
+  addSmurf,
+  editSmurfApi,
+  editMode
+}) {
   return (
     <div>
       <label>
@@ -37,9 +44,12 @@ export function AddSmurfForm({ newSmurf, typeSmurfForm, addSmurf, editSmurfApi }
           onChange={typeSmurfForm}
         />
       </label>
-
-      <button onClick={event => addSmurf(event, newSmurf)}>Add Smurf</button>
-      <button onClick={() => editSmurfApi(newSmurf)}>Edit Smurf</button>
+      <SubmitButtonForm
+        newSmurf={newSmurf}
+        addSmurf={addSmurf}
+        editSmurfApi={editSmurfApi}
+        editMode={editMode}
+      />
     </div>
   );
 }
