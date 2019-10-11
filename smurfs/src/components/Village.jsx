@@ -11,10 +11,10 @@ import Inhabitant from './Inhabitant';
 export function Village({village, fetchDataApi}) {
     useEffect(() => {
         fetchDataApi();
-    }, [village])
+    }, [])
     return (
         village.map( inhabitant => {
-            return <Inhabitant inhabitant={inhabitant} />
+            return <Inhabitant key={inhabitant.id} inhabitant={inhabitant} />
         })
     )
 }
