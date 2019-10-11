@@ -31,10 +31,12 @@ export const onChange = (event) => {
     }
 }
 
-export const onSubmit = (event, newSmurf) => {
-    event.preventDefault();
-    return {
-        type: types.ON_ADD_NEW_SMURF,
-        payload: newSmurf,
-    }
+export const onSubmit = (event, smurf) => dispatch => {
+    axios.post(smurfsApi, smurf)
+    .then(res => {
+        dispatch(addVillage(res.data))
+    })
+    .catch(error => {
+        console.log('error posting to api')
+    })
 }

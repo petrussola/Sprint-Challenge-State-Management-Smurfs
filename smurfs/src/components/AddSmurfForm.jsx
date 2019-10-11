@@ -1,11 +1,14 @@
 import React from "react";
+import axios from 'axios';
 
 // STATE
 
 import { connect } from "react-redux";
 import * as actionCreators from "../state/actionCreators";
 
-export function AddSmurfForm({ newSmurf, onChange, onSubmit }) {
+const smurfsApi = "http://localhost:3333/smurfs";
+
+export function AddSmurfForm({ newSmurf, onChange, onSubmit}) {
   return (
     <div>
       <label>
@@ -38,7 +41,9 @@ export function AddSmurfForm({ newSmurf, onChange, onSubmit }) {
         />
       </label>
 
-      <button onClick={event => onSubmit(event, newSmurf)}>Add Smurf to the Village</button>
+      <button onClick={event => onSubmit(event, newSmurf)}>
+        Add Smurf to the Village
+      </button>
     </div>
   );
 }
