@@ -24,7 +24,9 @@ export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
       return {
           ...newSmurf,
           [action.payload.name]: action.payload.value,
-      }
+      };
+      case types.ON_EDIT_SMURF:
+        return action.payload;
       case types.ON_ADD_VILLAGE:
         return {
           name: '',

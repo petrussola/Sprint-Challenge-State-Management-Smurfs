@@ -6,6 +6,7 @@ export default function Inhabitant({ inhabitant, onDeleteSmurf }) {
       {inhabitant.name} is {inhabitant.age} years old and {inhabitant.height}{" "}
       tall.
       <button onClick={() => onDeleteSmurf(inhabitant.id)}>Delete</button>
+      <button>Edit</button>
     </div>
   );
 }
