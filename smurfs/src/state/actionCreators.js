@@ -3,12 +3,6 @@ import axios from "axios";
 
 const smurfsApi = "http://localhost:3333/smurfs";
 
-export function increment() {
-  return {
-    type: types.INCREMENT
-  };
-}
-
 export function addVillage(village) {
   return {
     type: types.ON_ADD_VILLAGE,

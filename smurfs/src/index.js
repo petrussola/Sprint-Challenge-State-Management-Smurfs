@@ -10,7 +10,6 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
 const masterReducer = combineReducers({
-  count: reducers.countReducer,
   village: reducers.villageReducer,
   newSmurfReducer: reducers.newSmurfReducer
 });
