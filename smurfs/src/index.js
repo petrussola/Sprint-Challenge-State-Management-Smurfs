@@ -11,7 +11,8 @@ import thunk from "redux-thunk";
 
 const masterReducer = combineReducers({
   village: reducers.villageReducer,
-  newSmurf: reducers.newSmurfReducer
+  newSmurf: reducers.newSmurfReducer,
+  editMode: reducers.editModeReducer,
 });
 
 const store = createStore(

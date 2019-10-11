@@ -36,3 +36,16 @@ export function newSmurfReducer(newSmurf = initialNewSmurf, action) {
       return newSmurf;
   }
 }
+
+const editModeInitialState = false;
+
+export function editModeReducer(editMode = editModeInitialState, action) {
+  switch (action.type) {
+    case types.ON_EDIT_SMURF:
+      return true;
+    case types.ON_ADD_VILLAGE:
+      return false;
+    default:
+      return editMode;
+  }
+}
