@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 
 // COMPONENTS
-import Counter from "./Counter";
 import Village from "./Village";
+import AddSmurfForm from './AddSmurfForm';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
         <Village />
+        <AddSmurfForm />
       </div>
     );
   }
