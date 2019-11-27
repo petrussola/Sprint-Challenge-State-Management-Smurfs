@@ -23,10 +23,30 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+Context API allows props to be available to the child components of a DOM tree without having to manually pass props dowm from aprent to child to child etc. They can now be grabbed by any child component using context API syntax.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions - grab a User event and convert it into something that can be understood by the reducer, who converts that action into state change.
+Reducers - grab the actions and perform changes to slices of state. Reducers are pure functions.
+Store - is the element that keeps track of all slices of state of our app.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state - slices of state kept at the parent level of your app.
+Component state - slices of states that are kept at the component level.
+
+As much as possible, we shoud strive to have component Apps. However, in very specific cases, a slice of state can be kept at the component level to perform some local operation. However, be afraid of the product guy - you never know when she/he will ask you to use that component slice of state elsewhere! That is why we should have App slices of state as much as possible.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux think allows to create actions that grab and forward to reducer that use async data. i.e. API data fetch. We should create a wrapper action that waits for that async event to happen and then forwards the action that will be udnerstood by the reducer when the async action is completed.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Redux. It seems to cover for every use case and I see no reason to be using React native Context API or reinvent the wheel by replicating Redux async.
+
 
 ## Project Set Up
 
